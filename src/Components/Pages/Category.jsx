@@ -8,7 +8,9 @@ const Category = () => {
 
   useEffect(() => {
     axios
-      .get("http://ecommerce-backend-mohan.netlify.app/.netlify/functions/api/")
+      .get(
+        "https://ecommerce-backend-mohan.netlify.app/.netlify/functions/api/"
+      )
       .then((res) => {
         setBodyData(res.data);
       })

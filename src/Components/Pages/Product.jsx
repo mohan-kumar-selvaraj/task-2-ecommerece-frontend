@@ -29,11 +29,11 @@ const Product = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    let url = `http://ecommerce-backend-mohan.netlify.app/.netlify/functions/api/product/`;
+    let url = `https://ecommerce-backend-mohan.netlify.app/.netlify/functions/api/product/`;
     if (categoryName !== "AllProducts")
-      url = `http://ecommerce-backend-mohan.netlify.app/.netlify/functions/api/${categoryName}?page=${currentPage}&pageSize=5`;
+      url = `https://ecommerce-backend-mohan.netlify.app/.netlify/functions/api/${categoryName}?page=${currentPage}&pageSize=5`;
     else
-      url = `http://ecommerce-backend-mohan.netlify.app/.netlify/functions/api/product/?page=${currentPage}&pageSize=5`;
+      url = `https://ecommerce-backend-mohan.netlify.app/.netlify/functions/api/product/?page=${currentPage}&pageSize=5`;
 
     axios
       .get(url)
@@ -48,7 +48,7 @@ const Product = () => {
 
   useEffect(() => {
     axios
-      .get(`http://ecommerce-backend-mohan.netlify.app/.netlify/functions/api`)
+      .get(`https://ecommerce-backend-mohan.netlify.app/.netlify/functions/api`)
       .then((res) => {
         let cat = {
           CD_ID: 0,
@@ -66,7 +66,7 @@ const Product = () => {
   }, [categoryName]);
 
   useEffect(() => {
-    const url = `http://ecommerce-backend-mohan.netlify.app/.netlify/functions/api/search/${searchData}?page=${currentPage}&pageSize=5`;
+    const url = `https://ecommerce-backend-mohan.netlify.app/.netlify/functions/api/search/${searchData}?page=${currentPage}&pageSize=5`;
     console.log(url);
     axios
       .get(url)
